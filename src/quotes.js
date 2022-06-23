@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import twitter from './twitter.png';
-import './App.css';
-// import getQuotes from './quotes';
-// import Quote from './quote';
+
+const getQuotes = () => {
+  return quotes;
+}
 
 const quotes = [
 	{
@@ -86,53 +85,5 @@ const quotes = [
 		author: 'Nelson Mandela',
 	},
 ];
-const App = () => {
-	const [saying, setQuote] = useState({
-		quote: 'Let us go there, when you are ready. We are pencil in the hand of Creator ',
-		author: 'Owen A',
-	});
 
-	const getQuote = () => {
-		let rnd = Math.floor(Math.random() * 21);
-		// let quotes = getQuotes();
-		setQuote(quotes[rnd]);
-	};
-	const socialHandle = () => {
-		window.location.href = 'http://twitter.com/intent/tweet';
-	};
-	return (
-		<div id='quote-box' className='quote-box'>
-			<Quote quote={saying.quote} author={saying.author} />;
-			<a
-				className='social_media'
-				id='tweet-quote'
-				href='http://twitter.com/intent/tweet'
-				target='_blank'
-				rel='noopener noreferrer'>
-				<img className='s_media' src={twitter} />
-			</a>
-			<div className='btn_ctr'>
-				<div>
-					<button id='new-quote' className='nextQuote' onClick={getQuote}>
-						Next Quote
-					</button>
-				</div>
-			</div>
-		</div>
-	);
-};
-
-const Quote = (props) => {
-	return (
-		<div>
-			<p id='text' className='quote'>
-				{props.quote}
-			</p>
-			<p id='author' className='author'>
-				-{props.author}
-			</p>
-		</div>
-	);
-};
-
-export default App;
+export default getQuotes;
