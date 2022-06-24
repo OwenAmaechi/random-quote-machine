@@ -7,7 +7,7 @@ const Quote = (props) => {
 				{props.quote}
 			</p>
 			<p id='author' className='author'>
-				-{props.author}
+				- {props.author}
 			</p>
 		</div>
 	);

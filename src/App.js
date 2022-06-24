@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import twitter from './twitter.png';
 import './App.css';
-// import getQuotes from './quotes';
-// import Quote from './quote';
+
+import Quote from './quote';
 
 const quotes = [
 	{
@@ -86,6 +86,7 @@ const quotes = [
 		author: 'Nelson Mandela',
 	},
 ];
+
 const App = () => {
 	const [saying, setQuote] = useState({
 		quote: 'Let us go there, when you are ready. We are pencil in the hand of Creator ',
@@ -94,12 +95,9 @@ const App = () => {
 
 	const getQuote = () => {
 		let rnd = Math.floor(Math.random() * 21);
-		// let quotes = getQuotes();
 		setQuote(quotes[rnd]);
 	};
-	const socialHandle = () => {
-		window.location.href = 'http://twitter.com/intent/tweet';
-	};
+
 	return (
 		<div id='quote-box' className='quote-box'>
 			<Quote quote={saying.quote} author={saying.author} />;
@@ -118,19 +116,6 @@ const App = () => {
 					</button>
 				</div>
 			</div>
-		</div>
-	);
-};
-
-const Quote = (props) => {
-	return (
-		<div>
-			<p id='text' className='quote'>
-				{props.quote}
-			</p>
-			<p id='author' className='author'>
-				-{props.author}
-			</p>
 		</div>
 	);
 };
